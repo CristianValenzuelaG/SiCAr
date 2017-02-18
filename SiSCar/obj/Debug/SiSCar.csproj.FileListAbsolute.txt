@@ -1,0 +1,12 @@
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\bin\Debug\SiSCar.exe.config
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\bin\Debug\SiSCar.exe
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\bin\Debug\SiSCar.pdb
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\bin\Debug\EntityFramework.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\bin\Debug\MySql.Data.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\bin\Debug\EntityFramework.xml
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\obj\Debug\SiSCar.csprojResolveAssemblyReference.cache
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\obj\Debug\SiSCar.exe
+C:\Users\Galaviz\Desktop\programas 5 cuatri\SiSCar\SiSCar\obj\Debug\SiSCar.pdb
