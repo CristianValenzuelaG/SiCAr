@@ -17,6 +17,11 @@ namespace SiSCar.Modelo
         public virtual DbSet<Rol> roles { get; set; }
         public virtual DbSet<Permiso> permisos { get; set; }
         public virtual DbSet<PermisoNegadoRol> permisosnegadorol { get; set; }
+        public virtual DbSet<Venta> ventas { get; set; }
+        public virtual DbSet<Propietario> propietarios { get; set; }
+        public virtual DbSet<Comprador> Compradores { get; set; }
+        public virtual DbSet<Auto> autos { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

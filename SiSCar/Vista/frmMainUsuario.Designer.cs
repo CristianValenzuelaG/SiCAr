@@ -35,7 +35,7 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grDatos = new System.Windows.Forms.DataGridView();
-            this.sId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckbSatus = new System.Windows.Forms.CheckBox();
@@ -50,6 +50,7 @@
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -59,6 +60,7 @@
             this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBaja
             // 
@@ -68,6 +70,7 @@
             this.btnBaja.TabIndex = 2;
             this.btnBaja.Text = "Baja";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // btnSalir
             // 
@@ -77,6 +80,7 @@
             this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // txtBuscar
             // 
@@ -84,6 +88,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(551, 26);
             this.txtBuscar.TabIndex = 4;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label1
             // 
@@ -98,7 +103,7 @@
             // 
             this.grDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sId,
+            this.pkUsuario,
             this.sEmail,
             this.sStatus});
             this.grDatos.Location = new System.Drawing.Point(12, 64);
@@ -106,31 +111,37 @@
             this.grDatos.Size = new System.Drawing.Size(551, 292);
             this.grDatos.TabIndex = 6;
             // 
-            // sId
+            // pkUsuario
             // 
-            this.sId.HeaderText = "Id";
-            this.sId.Name = "sId";
+            this.pkUsuario.DataPropertyName = "pkUsuario";
+            this.pkUsuario.HeaderText = "Id";
+            this.pkUsuario.Name = "pkUsuario";
             // 
             // sEmail
             // 
+            this.sEmail.DataPropertyName = "sEmail";
             this.sEmail.HeaderText = "Email";
             this.sEmail.Name = "sEmail";
             this.sEmail.Width = 300;
             // 
             // sStatus
             // 
+            this.sStatus.DataPropertyName = "bStatus";
             this.sStatus.HeaderText = "Status";
             this.sStatus.Name = "sStatus";
             // 
             // ckbSatus
             // 
             this.ckbSatus.AutoSize = true;
+            this.ckbSatus.Checked = true;
+            this.ckbSatus.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbSatus.Location = new System.Drawing.Point(488, 362);
             this.ckbSatus.Name = "ckbSatus";
             this.ckbSatus.Size = new System.Drawing.Size(75, 24);
             this.ckbSatus.TabIndex = 7;
             this.ckbSatus.Text = "Status";
             this.ckbSatus.UseVisualStyleBackColor = true;
+            this.ckbSatus.CheckedChanged += new System.EventHandler(this.ckbSatus_CheckedChanged);
             // 
             // frmMainUsuario
             // 
@@ -148,7 +159,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMainUsuario";
-            this.Text = "frmMainUsuario";
+            this.Text = "Menu Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.grDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -164,9 +175,9 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView grDatos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sId;
+        private System.Windows.Forms.CheckBox ckbSatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pkUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn sEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn sStatus;
-        private System.Windows.Forms.CheckBox ckbSatus;
     }
 }

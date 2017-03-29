@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SiSCar.Vista;
 
 namespace SiSCar
 {
@@ -17,7 +18,7 @@ namespace SiSCar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmPrincipal());
         }
     }
 }

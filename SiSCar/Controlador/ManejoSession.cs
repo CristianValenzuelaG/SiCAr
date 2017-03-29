@@ -5,85 +5,90 @@ using System.Text;
 using System.Threading.Tasks;
 using SiSCar.Modelo;
 
+
 namespace SiSCar.Controlador
 {
-    public class ManejoSession
-    {
-        public static SessionHelper Login(string User, string Password)
-        {
-            SessionHelper objSession = new SessionHelper();
-            try
-            {
-                using (var ctx = new DataModel())
-                {
-                    Usuario user = ctx.usuarios.Include("rol").Include("rol.permisosnegadorol").Where(r => r.sEmail == User && r.bStatus == true).FirstOrDefault();
-                    if (user != null)
-                    {
-                        if (user.sPassword == Password)
-                        {
-                            objSession.isVald = true;
-                            objSession.usuario = user;
-                        }
-                    }
-                }
-                return objSession;
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
-        }
-    }
-    public class SessionHelper
-    {
-        public Boolean isVald { get; set; }
-        public Usuario usuario { get; set; }
-        public String msgError { get; set; }
 
-        public SessionHelper()
+
+        public class ManejoSesion
         {
-            this.isVald = false;
-            this.usuario = null;
-            this.msgError = "Datos incorrecctos, Favor de Verificar";
-        }
-        public Boolean tienePermiso(int ValidarPermiso)
-        {
-            Boolean tiene = false;
-            if (isVald)
+            public static SessiononHelper Login(string User, string Password)
             {
+                SessiononHelper objSession = new SessiononHelper();
                 try
                 {
                     using (var ctx = new DataModel())
                     {
-                        PermisoNegadoRol pNegado = usuario.rol.permisosnegadorol.Where(r => r.permiso.pkPermiso == ValidarPermiso).FirstOrDefault();
-                        if (pNegado == null)
-                            tiene = true;
+                        Usuario user = ctx.usuarios.Include("rol")
+                            .Include("rol.PermisosNegadoRol")
+                            .Where(r => r.sEmail == User && r.bStatus == true).FirstOrDefault();
+
+                        if (user != null)
+                        {
+                            if (user.sPassword == Password)
+                            {
+                                objSession.isValid = true;
+                                objSession.usuario = user;
+                            }
+
+                        }
                     }
-                    return tiene;
+                    return objSession;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
 
                     throw;
                 }
             }
-            else
+
+            public class SessiononHelper
             {
-                return tiene;
+                public Boolean isValid { get; set; }
+                public Usuario usuario { get; set; }
+                public string msgError { get; set; }
+
+                public Boolean tienepermiso(int validarpermiso)
+                {
+                    Boolean tiene = false;
+
+                    if (isValid)
+                    {
+                        try
+                        {
+                            using (var ctx = new DataModel())
+                            {
+                                PermisoNegadoRol pNegado =
+                                    usuario.rol.permisosnegadorol.Where(r => r.pkPermisoNegadoRol
+                                    == validarpermiso)
+                                        .FirstOrDefault();
+                                if (pNegado == null) tiene = true;
+
+                            }
+                            return tiene;
+                        }
+                        catch (Exception)
+                        {
+
+                            throw;
+                        }
+                    }
+                    else
+                    {
+                        return tiene;
+                    }
+                }
+
+             
             }
         }
-    }
     public enum enumPermisoActivos
     {
-        Alumno_Nuevo = 1,
-        Alumno_Buscar = 2,
-        Alumno_Actualizar = 4,
-        Alumno_Borrar = 3,
-        //------------------
-        Maestro_Nuevo = 8,
-        Maestro_Buscar = 7,
-        Maestro_Actualizar = 5,
-        Maestro_Borrar = 6,
-    }
+        ventas = 1,
+        Auto = 2,
+        usuarios = 3,
+        propietario = 4,
+        comprador = 5,
+        }
 }

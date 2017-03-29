@@ -11,6 +11,8 @@ namespace SiSCar.Modelo
     [Table("Roles")]
     public class Rol
     {
+        #region Base Region
+            
         [Key]
         public int pkRol { get; set; }
 
@@ -26,5 +28,22 @@ namespace SiSCar.Modelo
 
         public virtual ICollection<Usuario> usuarios { get; set; }
         public virtual ICollection<PermisoNegadoRol> permisosnegadorol { get; set; }
+        #endregion
+        public static List<Rol> getAll(Boolean status)
+        {
+            try
+            {
+                using (var ctx = new DataModel())
+                {
+                    return ctx.roles.Where(r => r.bStatus == status).ToList();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }
